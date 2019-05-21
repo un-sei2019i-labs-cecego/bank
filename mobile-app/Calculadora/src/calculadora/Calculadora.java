@@ -10,6 +10,8 @@ public class Calculadora {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Suma a = new Suma();
+        System.out.println(a.Suma(2, 2));
     }
 
 }

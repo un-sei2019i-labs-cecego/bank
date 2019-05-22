@@ -20,7 +20,6 @@ public class Calculadora {
         int opcion = Integer.parseInt(JOptionPane.showInputDialog("Operacion: \n1. Suma\n2. Division\n3. Multiplicacion"));
         switch (opcion) {
             case 1:
-                JOptionPane.showMessageDialog(null, "Suma: " + sum.suma(num1,num2));
                 JOptionPane.showMessageDialog(null, "Suma: " + sum.Suma(num1,num2));
 
                 break;

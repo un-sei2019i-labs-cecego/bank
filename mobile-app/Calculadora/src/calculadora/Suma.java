@@ -6,10 +6,10 @@ package calculadora;
 
 public class Suma {
 
-    public int Suma(int a, int b) {
+    public double Suma(double a, double b) {
         
-        int resultado = a+b;
-        System.out.println("holamundo");
+        double resultado = a+b;
+        //System.out.println("holamundo");
         
         return resultado;
     }

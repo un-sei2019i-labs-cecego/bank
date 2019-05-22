@@ -21,6 +21,7 @@ public class Calculadora {
         switch (opcion) {
             case 1:
                 JOptionPane.showMessageDialog(null, "Suma: " + sum.suma(num1,num2));
+                JOptionPane.showMessageDialog(null, "Suma: " + sum.Suma(num1,num2));
 
                 break;
             case 2:

@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="100px"
+        android:layout_margin="50px"
         tools:layout_editor_absoluteY="394dp" />
 
     <Button

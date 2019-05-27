@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class Sqlite extends SQLiteOpenHelper {
 
-    public Sqlite(Context context, String nombre, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, nombre, factory, version);
+    public Sqlite(Context context) {
+        super(context, "DB", null, 1);
     }
 
     @Override
@@ -16,7 +16,7 @@ public class Sqlite extends SQLiteOpenHelper {
         db.execSQL("create table usuario(identificacion integer primary key, claveNumerica integer)");
         db.execSQL("INSERT INTO usuario (identificacion, claveNumerica) VALUES (1022419092, 123456);");
         db.execSQL("create table administrador(identificacion integer primary key, claveAlfaNumerica text)");
-        db.execSQL("INSERT INTO administrador (identificacion, claveNumerica) VALUES (123456789, '123ABC');");
+        db.execSQL("INSERT INTO administrador (identificacion, claveAlfaNumerica) VALUES (123456789, '123ABC');");
 
     }
 
@@ -28,7 +28,7 @@ public class Sqlite extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO usuario (identificacion, claveNumerica) VALUES (1022419092, '123456');");
         db.execSQL("drop table if exists administrador");
         db.execSQL("create table administrador(identificacion integer primary key, claveAlfaNumerica text)");
-        db.execSQL("INSERT INTO administrador (identificacion, claveNumerica) VALUES (123456789, '123ABC');");
+        db.execSQL("INSERT INTO administrador (identificacion, claveAlfaNumerica) VALUES (123456789, '123ABC');");
 
     }
 

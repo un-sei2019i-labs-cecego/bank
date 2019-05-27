@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AppLogin</string>
+    <string-array name="array_users">
+        <item>Usuario</item>
+        <item>Administrador</item>
+    </string-array>
 </resources>

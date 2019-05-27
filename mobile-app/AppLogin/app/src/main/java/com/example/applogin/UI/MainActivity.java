@@ -3,6 +3,7 @@ package com.example.applogin.UI;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.applogin.DataAccess.Usuario;
 
@@ -17,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         Usuario u = new Usuario(1022419092, 123456);
 
-        Log.d("Resultado", String.valueOf(u.verficarContrasena(this)));
+        Toast.makeText(getApplicationContext(),
+                "Hola papi", Toast.LENGTH_LONG);
 
     }
 }

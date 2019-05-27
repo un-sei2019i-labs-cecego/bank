@@ -80,13 +80,4 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="548dp" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olvide mi contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="627dp" />
-
 </LinearLayout>

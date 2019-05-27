@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class Usuario {
 
-    int identificacion;
-    int contrasena;
+    long identificacion;
+    long contrasena;
 
-    public Usuario(int identificacion, int contrasena){
+    public Usuario(long identificacion, long contrasena){
 
         this.identificacion = identificacion;
         this.contrasena = contrasena;

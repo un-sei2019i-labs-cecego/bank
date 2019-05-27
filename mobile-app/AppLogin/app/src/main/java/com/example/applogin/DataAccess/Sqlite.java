@@ -14,7 +14,7 @@ public class Sqlite extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL("create table usuario(identificacion integer primary key, claveNumerica integer)");
-        db.execSQL("INSERT INTO usuario (identificacion, claveNumerica) VALUES (1022419092, '123456');");
+        db.execSQL("INSERT INTO usuario (identificacion, claveNumerica) VALUES (1022419092, 123456);");
         db.execSQL("create table administrador(identificacion integer primary key, claveAlfaNumerica text)");
         db.execSQL("INSERT INTO administrador (identificacion, claveNumerica) VALUES (123456789, '123ABC');");
 

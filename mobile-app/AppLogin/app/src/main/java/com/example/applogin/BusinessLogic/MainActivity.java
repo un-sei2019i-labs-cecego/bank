@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.applogin.DataAccess.Usuario;
+import com.example.applogin.DataAccess.Models.Usuario;
 
 import com.example.applogin.R;
 

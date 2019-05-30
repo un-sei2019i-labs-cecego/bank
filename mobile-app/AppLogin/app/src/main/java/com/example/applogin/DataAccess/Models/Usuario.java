@@ -1,10 +1,10 @@
-package com.example.applogin.DataAccess;
+package com.example.applogin.DataAccess.Models;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-import android.widget.Toast;
+
+import com.example.applogin.DataAccess.Database.DataBase;
 
 public class Usuario {
 
@@ -20,7 +20,7 @@ public class Usuario {
 
     public boolean verficarContrasena(Context context) {
 
-        Sqlite sqlite = new Sqlite(context);
+        DataBase sqlite = new DataBase(context);
         SQLiteDatabase bd = sqlite.getWritableDatabase();
         Cursor fila = bd.rawQuery("select identificacion, claveNumerica from usuario where identificacion = " + identificacion + " and claveNumerica = " + contrasena, null);
 

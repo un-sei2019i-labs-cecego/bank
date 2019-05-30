@@ -1,12 +1,12 @@
-package com.example.applogin.DataAccess;
+package com.example.applogin.DataAccess.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class Sqlite extends SQLiteOpenHelper {
+public class DataBase extends SQLiteOpenHelper {
 
-    public Sqlite(Context context) {
+    public DataBase(Context context) {
         super(context, "DB", null, 1);
     }
 

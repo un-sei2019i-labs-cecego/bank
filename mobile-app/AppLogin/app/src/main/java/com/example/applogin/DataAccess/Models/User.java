@@ -6,12 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.applogin.DataAccess.Database.DataBase;
 
-public class Usuario {
+public class User {
 
     long identificacion;
     long contrasena;
 
-    public Usuario(long identificacion, long contrasena){
+    public User(long identificacion, long contrasena){
 
         this.identificacion = identificacion;
         this.contrasena = contrasena;

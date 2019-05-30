@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.applogin.DataAccess.Models.Usuario;
+import com.example.applogin.DataAccess.Models.User;
 
 import com.example.applogin.R;
 
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText2;
     Button button;
 
-    Usuario usuario;
+    User usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
-            usuario = new Usuario(Integer.parseInt(editText1.getText().toString()), Integer.parseInt(editText2.getText().toString()));
+            usuario = new User(Integer.parseInt(editText1.getText().toString()), Integer.parseInt(editText2.getText().toString()));
             if (usuario.verficarContrasena(getApplicationContext())){
                 Toast.makeText(getApplicationContext(), "¡Bienvenido!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "User o contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }
 
         } catch(NumberFormatException ex){

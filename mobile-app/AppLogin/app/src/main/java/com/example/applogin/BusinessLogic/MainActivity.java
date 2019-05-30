@@ -43,17 +43,16 @@ public class MainActivity extends AppCompatActivity {
 
             usuario = new Usuario(Integer.parseInt(editText1.getText().toString()), Integer.parseInt(editText2.getText().toString()));
             if (usuario.verficarContrasena(getApplicationContext())){
-                Toast.makeText(getApplicationContext(), "Bienvenido papi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "¡Bienvenido!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getApplicationContext(), "Error papi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }
 
         } catch(NumberFormatException ex){
 
-            Toast.makeText(getApplicationContext(), "No lo haces bien papi", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Los campos deben ser numéricos (y no vacios)", Toast.LENGTH_SHORT).show();
 
         }
-
 
     }
 

@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     EditText editText1;
     EditText editText2;
     Button button;
-
     User usuario;
 
     @Override
@@ -27,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
         editText1 = (EditText)findViewById(R.id.editText2);
         editText2 = (EditText)findViewById(R.id.editText3);
         button = (Button)findViewById(R.id.button);
-
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0)
             {
                 eventButton();
             }
         });
+
 
     }
 

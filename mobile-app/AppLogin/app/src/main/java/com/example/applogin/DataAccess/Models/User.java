@@ -22,7 +22,7 @@ public class User {
 
         DataBase sqlite = new DataBase(context);
         SQLiteDatabase bd = sqlite.getWritableDatabase();
-        Cursor fila = bd.rawQuery("select identificacion, claveNumerica from usuario where identificacion = " + identificacion + " and claveNumerica = " + contrasena, null);
+        Cursor fila = bd.rawQuery("select id, password from user where id = " + identificacion + " and password = " + contrasena, null);
 
         if (fila.moveToFirst()) {
 

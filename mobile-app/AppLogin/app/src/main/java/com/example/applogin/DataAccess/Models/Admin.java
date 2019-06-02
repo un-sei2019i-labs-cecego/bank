@@ -7,7 +7,7 @@ public class Admin extends Person{
     private long password;
 
     public Admin(Context context, long id) {
-        super(context, id);
+        super(context);
     }
 
     public void transferBalance(){

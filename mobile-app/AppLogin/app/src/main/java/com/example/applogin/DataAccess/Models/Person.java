@@ -15,9 +15,8 @@ public class Person {
 
     private Context context;
 
-    public Person(Context context, long id) {
+    public Person(Context context) {
         this.context = context;
-        this.id = id;
     }
 
     public boolean login(long id, long password) {

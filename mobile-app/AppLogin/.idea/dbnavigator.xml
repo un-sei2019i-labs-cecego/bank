@@ -23,15 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="98866242-be3b-4472-a441-9a8122a587b0">
-        <schema name="main" object-types="table, constraint, index, dataset trigger, view, column" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="98866242-be3b-4472-a441-9a8122a587b0">
-      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[update user set email = 'engdiazmu@unal.edu.co' where id = 1013681625]]></console>
+      <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

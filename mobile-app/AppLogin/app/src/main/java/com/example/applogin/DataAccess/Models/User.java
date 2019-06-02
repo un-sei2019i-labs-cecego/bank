@@ -6,38 +6,33 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.applogin.DataAccess.Database.DataBase;
 
-public class User {
+public class User extends Person{
 
-    long identificacion;
-    long contrasena;
+    private long password;
+    private Account account;
 
-    public User(long identificacion, long contrasena){
-
-        this.identificacion = identificacion;
-        this.contrasena = contrasena;
-
+    public User(Context context, long id) {
+        super(context, id);
     }
 
-    public boolean verficarContrasena(Context context) {
+    public String getAccountNum(){
+        return account.getAccountNum();
+    }
 
-        DataBase sqlite = new DataBase(context);
-        SQLiteDatabase bd = sqlite.getWritableDatabase();
-        Cursor fila = bd.rawQuery("select identificacion, claveNumerica from usuario where identificacion = " + identificacion + " and claveNumerica = " + contrasena, null);
+    public long getBalance(){
+        return account.getBalance();
+    }
 
-        if (fila.moveToFirst()) {
+    public String[][] getTransactionHistory(){
+        return null;
+    }
 
-            if (fila.getInt(0) == identificacion && fila.getInt(1) == contrasena) {
-
-                bd.close();
-                return true;
-
-            }
-
-        }
-
-        bd.close();
+    public boolean transferBalance(){
         return false;
+    }
 
+    public boolean changePassword(){
+        return false;
     }
 
 }

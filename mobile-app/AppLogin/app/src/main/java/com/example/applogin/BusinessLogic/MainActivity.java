@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void eventButton(){
 
-        try {
+        /*try {
 
             usuario = new User(Integer.parseInt(editText1.getText().toString()), Integer.parseInt(editText2.getText().toString()));
             if (usuario.verficarContrasena(getApplicationContext())){
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), "Los campos deben ser numéricos (y no vacios)", Toast.LENGTH_SHORT).show();
 
-        }
+        }*/
 
     }
 

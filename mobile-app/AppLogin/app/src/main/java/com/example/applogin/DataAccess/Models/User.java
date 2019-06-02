@@ -15,9 +15,23 @@ public class User extends Person{
         super(context, id);
     }
 
+
     public String getAccountNum(){
         return account.getAccountNum();
     }
+
+    /*public boolean verficarContrasena(Context context) {
+
+        DataBase sqlite = new DataBase(context);
+        SQLiteDatabase bd = sqlite.getWritableDatabase();
+        Cursor fila = bd.rawQuery("select id, password from user where id = " + identificacion + " and password = " + contrasena, null);
+
+        if (fila.moveToFirst()) {
+
+            if (fila.getInt(0) == identificacion && fila.getInt(1) == contrasena) {
+
+                bd.close();
+                return true;*/
 
     public long getBalance(){
         return account.getBalance();

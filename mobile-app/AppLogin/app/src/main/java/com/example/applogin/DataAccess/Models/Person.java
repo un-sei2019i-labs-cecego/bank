@@ -23,7 +23,7 @@ public class Person {
 
         DataBase sqlite = new DataBase(context);
         SQLiteDatabase bd = sqlite.getWritableDatabase();
-        Cursor fila = bd.rawQuery("select identificacion, claveNumerica from usuario where identificacion = " + id + " and claveNumerica = " + password, null);
+        Cursor fila = bd.rawQuery("select id, password from user where id = " + id + " and password = " + password, null);
 
         if (fila.moveToFirst()) {
 

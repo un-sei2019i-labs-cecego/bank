@@ -32,6 +32,10 @@ public class User extends Person{
 
     }
 
+    public long getPsssowrd(){
+        return password;
+    }
+
     public String getAccountNum(){
         return account.getAccountNum();
     }

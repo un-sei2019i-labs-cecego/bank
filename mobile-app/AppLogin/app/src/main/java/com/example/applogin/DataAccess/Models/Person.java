@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.applogin.DataAccess.Database.DataBase;
+import com.example.applogin.DataAccess.Repositories.UserRepository;
 
 public class Person {
 
@@ -15,30 +16,28 @@ public class Person {
 
     private Context context;
 
+    private UserRepository userRepository;
+
     public Person(Context context) {
         this.context = context;
+        userRepository = new UserRepository(context);
     }
 
     public boolean login(long id, long password) {
 
-        DataBase sqlite = new DataBase(context);
-        SQLiteDatabase bd = sqlite.getWritableDatabase();
-        Cursor fila = bd.rawQuery("select identificacion, claveNumerica from usuario where identificacion = " + id + " and claveNumerica = " + password, null);
-
-        if (fila.moveToFirst()) {
-
-            if (fila.getInt(0) == id && fila.getLong(1) == password) {
-
-                bd.close();
-                return true;
-
-            }
-
+        if (userRepository.getUserById(id)[5] != null && (long) userRepository.getUserById(id)[5] == password){
+            return true;
         }
-
-        bd.close();
         return false;
 
+    }
+
+    public long getId(){
+        return id;
+    }
+
+    public String getName(){
+        return name;
     }
 
     public void restorePassword() {

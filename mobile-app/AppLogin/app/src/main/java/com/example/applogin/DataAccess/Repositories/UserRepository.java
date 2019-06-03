@@ -13,10 +13,11 @@ public class UserRepository {
     private SQLiteDatabase database;
 
     public UserRepository(Context ctx) {
+        ctx.deleteDatabase("DB");
         database = new DataBase(ctx).getWritableDatabase();
     }
 
-    public void createUser(long id, String name, long phone, String email, String accountNumber, int password) {
+    public void createUser(long id, String name, long phone, String email, String accountNumber, long password) {
         database.execSQL("INSERT INTO user (id, name, phone, email, accountNumber, password) " +
                 "VALUES (" + id + ", " + name + ", " + phone + ", " + email + ", " + accountNumber + ", " + password + ");");
     }
@@ -25,12 +26,12 @@ public class UserRepository {
         Object user[] = new Object[6];
         Cursor fila = database.rawQuery("select * from user where id = " + id, null);
         while (fila.moveToNext()) {
-            user[0] = fila.getInt(fila.getColumnIndex("id"));
+            user[0] = fila.getLong(fila.getColumnIndex("id"));
             user[1] = fila.getString(fila.getColumnIndex("name"));
             user[2] = fila.getLong(fila.getColumnIndex("phone"));
             user[3] = fila.getString(fila.getColumnIndex("email"));
             user[4] = fila.getString(fila.getColumnIndex("accountNumber"));
-            user[5] = fila.getInt(fila.getColumnIndex("password"));
+            user[5] = fila.getLong(fila.getColumnIndex("password"));
         }
         return user;
     }

@@ -28,20 +28,19 @@ public class MainActivity extends AppCompatActivity {
 
         person = new Person(getApplicationContext());
 
-        editText1 = (EditText)findViewById(R.id.editText2);
-        editText2 = (EditText)findViewById(R.id.editText3);
-        button = (Button)findViewById(R.id.button);
+        editText1 = (EditText) findViewById(R.id.editText2);
+        editText2 = (EditText) findViewById(R.id.editText3);
+        button = (Button) findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0)
-            {
+            public void onClick(View arg0) {
                 eventButton();
             }
         });
 
     }
 
-    public void eventButton(){
+    public void eventButton() {
 
         try {
 
@@ -49,12 +48,14 @@ public class MainActivity extends AppCompatActivity {
             long password = Long.parseLong(editText2.getText().toString());
 
             if (person.login(id, password)) {
-                startActivity(new Intent(MainActivity.this, MyAccountActivity.class));
+                Intent intent = new Intent(MainActivity.this, MyAccountActivity.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }
 
-        } catch(NumberFormatException ex){
+        } catch (NumberFormatException ex) {
 
             Toast.makeText(getApplicationContext(), "Los campos deben ser numéricos (y no vacios)", Toast.LENGTH_SHORT).show();
 

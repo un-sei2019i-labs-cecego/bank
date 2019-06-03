@@ -50,6 +50,12 @@
                         android:gravity="center"/>
 
                     <TextView android:id="@+id/textView3"
+                        android:text="Cuenta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"/>
+
+                    <TextView android:id="@+id/textView4"
                         android:text="Saldo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -125,7 +131,7 @@
                         tools:layout_editor_absoluteY="494dp" />
 
                     <Button
-                        android:id="@+id/button1"
+                        android:id="@+id/button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Olvidé mi contraseña"

@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.NumberFormat;
+import java.text.DecimalFormat;
 
 import com.example.applogin.DataAccess.Models.User;
 import com.example.applogin.R;
@@ -44,11 +46,15 @@ public class MyAccountActivity extends AppCompatActivity {
         // Llamar datos del usuario
         user = new User(getApplicationContext(), getIntent().getLongExtra("id", 0));
 
+        NumberFormat formatter = new DecimalFormat("#,###");
+        double myNumber = 1000000;
+        String formattedNumber = formatter.format(user.getBalance());
+
         // Asignar datos del usuario
         textView1.setText(user.getName());
-        textView2.setText(user.getId() + "");
-        textView3.setText(user.getAccountNum());
-        textView4.setText(user.getBalance() + "");
+        textView2.setText("C.C. " + user.getId() + "");
+        textView3.setText("Cuenta No. " + user.getAccountNum());
+        textView4.setText("$" + formattedNumber + "");
 
         // Llamar TabHost
         TabHost tabs = (TabHost) findViewById(android.R.id.tabhost);

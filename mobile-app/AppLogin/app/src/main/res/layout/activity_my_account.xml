@@ -31,37 +31,72 @@
                 android:id="@android:id/tabcontent" >
 
                 <!-- Pesataña 1 -->
-                <LinearLayout android:id="@+id/Cuenta"
+                <RelativeLayout android:id="@+id/Cuenta"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center">
+
+                    >
+
+                    <View
+                        android:id="@+id/colored_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="94dp"
+                        android:background="@color/fsuperior" />
+                    <View
+                        android:id="@+id/colored_bar2"
+                        android:layout_below="@+id/colored_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp"
+                        android:background="@color/finferior" />
 
                     <TextView android:id="@+id/textView1"
+                        android:fontFamily="@font/aslgt"
                         android:text="Nombre"
+                        android:textColor="@color/cardview_light_background"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"/>
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="35dp"
+                        android:gravity="left"/>
 
-                    <TextView android:id="@+id/textView2"
+                    <TextView
+                        android:fontFamily="@font/aslgt"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/textView2"
+                        android:textColor="@color/cardview_light_background"
+                        android:layout_below="@+id/textView1"
                         android:text="Cedula"
+                        android:textSize="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"/>
+                        android:gravity="left"/>
 
                     <TextView android:id="@+id/textView3"
+                        android:fontFamily="@font/asreg"
+                        android:textColor="@color/cardview_light_background"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@+id/textView2"
                         android:text="Cuenta"
+                        android:textSize="20dp"
+                        android:layout_marginTop="35dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"/>
+                        android:gravity="left"/>
 
                     <TextView android:id="@+id/textView4"
+                        android:fontFamily="@font/asreg"
+                        android:textColor="@color/cardview_light_background"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@+id/textView3"
+                        android:textSize="40dp"
                         android:text="Saldo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"/>
+                        android:gravity="left"/>
 
-                </LinearLayout>
+                </RelativeLayout>
 
                 <!-- Pesataña 2 -->
                 <LinearLayout android:id="@+id/Transacciones"

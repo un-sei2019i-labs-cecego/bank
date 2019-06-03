@@ -23,16 +23,12 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="18f17c44-859c-47aa-836b-3611369ca735">
-        <schema name="main" object-types="view, constraint, dataset trigger, column, table, index" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="18f17c44-859c-47aa-836b-3611369ca735">
-      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[create table transactions(id integer primary key autoincrement, account1 text, account2 text, hour text, date text,type text, amount bigint)]]></console>
-      <console name="Connection 1" type="STANDARD" schema="main" session="Main"><![CDATA[create table transactio(id integer primary key, account1 text, account2 text, hour text, date text,type text, amount bigint);]]></console>
+      <console name="Connection" type="STANDARD" schema="main" session="Main" />
+      <console name="Connection 1" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

@@ -2,6 +2,7 @@ package com.example.applogin.DataAccess.Repositories;
 
 import com.example.applogin.DataAccess.Database.DataBase;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,18 +24,23 @@ public class TransactionRepository {
 
     public void transfer(String account1, String account2, String hour, long amount) {
         //Retirar dinero
-        Cursor fila = database.rawQuery("select * from account where account = " + account1, null);
+        Cursor fila = database.rawQuery("select * from account where account = '" + account1+"'", null);
         long amountOfMoney1;
+        ContentValues cv = new ContentValues();
         while (fila.moveToNext()) {
             amountOfMoney1 = fila.getLong(fila.getColumnIndex("amount"));
-            database.execSQL("update account set amount = " + (amountOfMoney1 - amount) + " where account = " + account1);
+            cv.put("amount",(amountOfMoney1 - amount)+"");
+            database.update("account",cv,"account = '" + account1+"'",null);
+            //database.execSQL("update account set amount = " + (amountOfMoney1 - amount) + " where account = '" + account1+"'");
         }
         //Ingresar dinero
-        fila = database.rawQuery("select * from account where account = " + account2, null);
+        fila = database.rawQuery("select * from account where account = '" + account2+"'", null);
         long amountOfMoney2;
         while (fila.moveToNext()) {
             amountOfMoney2 = fila.getLong(fila.getColumnIndex("amount"));
-            database.execSQL("update account set amount = " + (amountOfMoney2 + amount) + " where account = " + account2);
+            cv.put("amount",(amountOfMoney2 - amount)+"");
+            database.update("account",cv,"account = '" + account2+"'",null);
+            //database.execSQL("update account set amount = " + (amountOfMoney2 + amount) + " where account = '" + account2+"'");
         }
 
 

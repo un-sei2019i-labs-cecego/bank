@@ -6,9 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.example.applogin.DataAccess.Database.DataBase;
+import com.example.applogin.DataAccess.Repositories.TransactionRepository;
 import com.example.applogin.DataAccess.Repositories.UserRepository;
 
 public class User extends Person{
+
+
 
     private long password;
     private Account account;
@@ -16,10 +19,12 @@ public class User extends Person{
     private Context context;
 
     private UserRepository userRepository;
-
+    private TransactionRepository transactionRepository;
     public User(Context context, long id) {
         super(context);
-
+        //Borrar luego de Pruebas---------------------------------------------
+        transactionRepository = new TransactionRepository(context);
+        //----------------------------------------------
         userRepository = new UserRepository(context);
         Object[] results  = userRepository.getUserById(id);
 
@@ -32,7 +37,7 @@ public class User extends Person{
 
     }
 
-    public long getPsssowrd(){
+    public long getPassowrd(){
         return password;
     }
 
@@ -48,8 +53,11 @@ public class User extends Person{
         return null;
     }
 
-    public boolean transferBalance(){
-        return false;
+    public boolean transferBalance(String account, long money){
+        //Conexion para prueba--------------------------------
+        transactionRepository.transfer(this.account.getAccountNum(),account,"12:00:00",money);
+        //-----------------------------------------------------
+        return true;
     }
 
     public boolean changePassword(){

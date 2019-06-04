@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".BusinessLogic.MyAccountActivity">
 
     <!-- Contenedor principal de pestañas -->
-    <TabHost android:id="@android:id/tabhost"
+    <TabHost
+        android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <!-- Distribucion TabWidget y el FrameLayout -->
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <!-- Seleccion de pestañas -->
-            <TabWidget android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@android:id/tabs" />
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-            <!-- Contenido de las pesatañas) -->
-            <FrameLayout android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@android:id/tabcontent" >
+            <!-- Contenido de las pestañas) -->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <!-- Pesataña 1 -->
-                <RelativeLayout android:id="@+id/Cuenta"
-                    android:orientation="vertical"
+                <RelativeLayout
+                    android:id="@+id/Cuenta"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:orientation="vertical"
 
                     >
 
@@ -43,74 +46,79 @@
                         android:layout_width="match_parent"
                         android:layout_height="94dp"
                         android:background="@color/fsuperior" />
+
                     <View
                         android:id="@+id/colored_bar2"
-                        android:layout_below="@+id/colored_bar"
                         android:layout_width="match_parent"
                         android:layout_height="95dp"
+                        android:layout_below="@+id/colored_bar"
                         android:background="@color/finferior" />
 
-                    <TextView android:id="@+id/textView1"
-                        android:fontFamily="@font/aslgt"
-                        android:text="Nombre"
-                        android:textColor="@color/cardview_light_background"
+                    <TextView
+                        android:id="@+id/textView1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
-                        android:textSize="35dp"
-                        android:gravity="left"/>
+                        android:fontFamily="@font/aslgt"
+                        android:gravity="left"
+                        android:text="Nombre"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="35dp" />
 
                     <TextView
-                        android:fontFamily="@font/aslgt"
-                        android:layout_marginLeft="10dp"
                         android:id="@+id/textView2"
-                        android:textColor="@color/cardview_light_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_below="@+id/textView1"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/aslgt"
+                        android:gravity="left"
                         android:text="Cedula"
-                        android:textSize="20dp"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="left"/>
-
-                    <TextView android:id="@+id/textView3"
-                        android:fontFamily="@font/asreg"
-                        android:textColor="@color/cardview_light_background"
-                        android:layout_marginLeft="10dp"
                         android:layout_below="@+id/textView2"
-                        android:text="Cuenta"
-                        android:textSize="20dp"
-                        android:layout_marginTop="35dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="left"/>
-
-                    <TextView android:id="@+id/textView4"
-                        android:fontFamily="@font/asreg"
-                        android:textColor="@color/cardview_light_background"
                         android:layout_marginLeft="10dp"
-                        android:layout_below="@+id/textView3"
-                        android:textSize="40dp"
-                        android:text="Saldo"
+                        android:layout_marginTop="35dp"
+                        android:fontFamily="@font/asreg"
+                        android:gravity="left"
+                        android:text="Cuenta"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="left"/>
+                        android:layout_below="@+id/textView3"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/asreg"
+                        android:gravity="left"
+                        android:text="Saldo"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="40dp" />
 
                 </RelativeLayout>
 
-                <!-- Pesataña 2 -->
-                <LinearLayout android:id="@+id/Transacciones"
-                    android:orientation="vertical"
+                <!-- Pestaña 2 -->
+                <LinearLayout
+                    android:id="@+id/Transacciones"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <EditText
                         android:id="@+id/editText1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPassword"
+                        android:inputType="text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:layout_editor_absoluteY="442dp" />
@@ -130,7 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPassword"
+                        android:inputType="number"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:layout_editor_absoluteY="442dp" />
@@ -150,7 +158,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPassword"
+                        android:inputType="numberPassword"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:layout_editor_absoluteY="442dp" />

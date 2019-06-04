@@ -1,6 +1,5 @@
 package com.example.applogin.BusinessLogic;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +12,7 @@ import java.text.NumberFormat;
 import java.text.DecimalFormat;
 
 import com.example.applogin.DataAccess.Models.User;
+import com.example.applogin.DataAccess.Repositories.TransactionRepository;
 import com.example.applogin.R;
 
 public class MyAccountActivity extends AppCompatActivity {
@@ -27,6 +27,7 @@ public class MyAccountActivity extends AppCompatActivity {
     EditText editText3;
 
     User user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,12 +96,13 @@ public class MyAccountActivity extends AppCompatActivity {
 
         try {
 
-            String count = editText1.getText().toString();
-            long balance = Long.parseLong(editText2.getText().toString());
+            String account = editText1.getText().toString();
+            long money = Long.parseLong(editText2.getText().toString());
             long password = Long.parseLong(editText3.getText().toString());
 
-            if (password == user.getPsssowrd() && user.transferBalance()){
-                Toast.makeText(getApplicationContext(), "Trsnsacción realizada", Toast.LENGTH_SHORT).show();
+            if (password == user.getPassowrd() && user.transferBalance(account,money)){
+
+                Toast.makeText(getApplicationContext(), "Transacción realizada", Toast.LENGTH_SHORT).show();
             }  else {
                 Toast.makeText(getApplicationContext(), "La transacción no se pudo realizar", Toast.LENGTH_SHORT).show();
             }

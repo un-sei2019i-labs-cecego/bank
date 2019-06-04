@@ -1,5 +1,6 @@
 package com.example.applogin.BusinessLogic;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -99,9 +100,11 @@ public class MyAccountActivity extends AppCompatActivity {
             String account = editText1.getText().toString();
             long money = Long.parseLong(editText2.getText().toString());
             long password = Long.parseLong(editText3.getText().toString());
+            NumberFormat formatter = new DecimalFormat("#,###");
+            String formattedNumber = formatter.format(user.getBalance());
 
             if (password == user.getPassowrd() && user.transferBalance(account,money)){
-
+                textView4.setText("$" + formattedNumber + "");
                 Toast.makeText(getApplicationContext(), "Transacción realizada", Toast.LENGTH_SHORT).show();
             }  else {
                 Toast.makeText(getApplicationContext(), "La transacción no se pudo realizar", Toast.LENGTH_SHORT).show();

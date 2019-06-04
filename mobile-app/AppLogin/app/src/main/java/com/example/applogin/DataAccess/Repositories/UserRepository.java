@@ -13,7 +13,7 @@ public class UserRepository {
     private SQLiteDatabase database;
 
     public UserRepository(Context ctx) {
-        ctx.deleteDatabase("DB");
+        //ctx.deleteDatabase("DB");
         database = new DataBase(ctx).getWritableDatabase();
     }
 

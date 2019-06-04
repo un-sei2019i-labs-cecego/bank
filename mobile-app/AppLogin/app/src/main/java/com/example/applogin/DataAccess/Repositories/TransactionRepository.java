@@ -10,39 +10,40 @@ import android.database.sqlite.SQLiteDatabase;
 public class TransactionRepository {
 
     private SQLiteDatabase database;
-
+    Context ctx;
     public TransactionRepository(Context ctx) {
-        database = new DataBase(ctx).getWritableDatabase();
+        this.ctx = ctx;
     }
 
     public void createTransaction(int id, String account1, String account2, String hour,
                                   String date, String type, long amount) {
+        database = new DataBase(ctx).getWritableDatabase();
 
         database.execSQL("INSERT INTO transactions (id, account1, account2, hour, date, type, amount)  " +
                 "VALUES (" + id + ", '" + account1 + "', '" + account2 + "','" + hour + "','" + date + "','" + type + "'," + amount + ");");
     }
 
-    public void transfer(String account1, String account2, String hour, long amount) {
+    public boolean transfer(String account1, String account2, long amount) {
+        database = new DataBase(ctx).getWritableDatabase();
+        String hour="12:00:00";
         //Retirar dinero
         Cursor fila = database.rawQuery("select * from account where account = '" + account1+"'", null);
         long amountOfMoney1;
-        ContentValues cv = new ContentValues();
         while (fila.moveToNext()) {
             amountOfMoney1 = fila.getLong(fila.getColumnIndex("amount"));
-            cv.put("amount",(amountOfMoney1 - amount)+"");
-            database.update("account",cv,"account = '" + account1+"'",null);
-            //database.execSQL("update account set amount = " + (amountOfMoney1 - amount) + " where account = '" + account1+"'");
+            if(amountOfMoney1 - amount<0){
+                return false;
+            }
+            database.execSQL("update account set amount = " + (amountOfMoney1 - amount) + " where account = '" + account1+"'");
         }
         //Ingresar dinero
         fila = database.rawQuery("select * from account where account = '" + account2+"'", null);
         long amountOfMoney2;
         while (fila.moveToNext()) {
             amountOfMoney2 = fila.getLong(fila.getColumnIndex("amount"));
-            cv.put("amount",(amountOfMoney2 - amount)+"");
-            database.update("account",cv,"account = '" + account2+"'",null);
-            //database.execSQL("update account set amount = " + (amountOfMoney2 + amount) + " where account = '" + account2+"'");
+            database.execSQL("update account set amount = " + (amountOfMoney2 + amount) + " where account = '" + account2+"'");
         }
-
+        return  true;
 
     }
 }

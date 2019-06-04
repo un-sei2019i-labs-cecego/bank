@@ -54,10 +54,9 @@ public class User extends Person{
     }
 
     public boolean transferBalance(String account, long money){
-        //Conexion para prueba--------------------------------
-        transactionRepository.transfer(this.account.getAccountNum(),account,"12:00:00",money);
-        //-----------------------------------------------------
-        return true;
+
+        return transactionRepository.transfer(this.account.getAccountNum(),account,money);
+
     }
 
     public boolean changePassword(){

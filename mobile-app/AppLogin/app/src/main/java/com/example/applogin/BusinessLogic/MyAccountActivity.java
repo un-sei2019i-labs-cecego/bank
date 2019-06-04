@@ -104,8 +104,27 @@ public class MyAccountActivity extends AppCompatActivity {
             String formattedNumber = formatter.format(user.getBalance());
 
             if (password == user.getPassowrd() && user.transferBalance(account,money)){
+
                 textView4.setText("$" + formattedNumber + "");
                 Toast.makeText(getApplicationContext(), "Transacción realizada", Toast.LENGTH_SHORT).show();
+
+                editText1.setText("");
+                editText2.setText("");
+                editText3.setText("");
+
+                // Llamar datos del usuario
+                user = new User(getApplicationContext(), getIntent().getLongExtra("id", 0));
+
+                formatter = new DecimalFormat("#,###");
+                double myNumber = 1000000;
+                formattedNumber = formatter.format(user.getBalance());
+
+                // Asignar datos del usuario
+                textView1.setText(user.getName());
+                textView2.setText("C.C. " + user.getId() + "");
+                textView3.setText("Cuenta No. " + user.getAccountNum());
+                textView4.setText("$" + formattedNumber + "");
+
             }  else {
                 Toast.makeText(getApplicationContext(), "La transacción no se pudo realizar", Toast.LENGTH_SHORT).show();
             }

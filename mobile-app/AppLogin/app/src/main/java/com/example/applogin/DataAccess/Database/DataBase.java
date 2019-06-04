@@ -21,10 +21,10 @@ public class DataBase extends SQLiteOpenHelper {
         db.execSQL("create table admin(id integer primary key, name text, phone bigint, email text, password integer)");
         db.execSQL("INSERT INTO admin (id, name, phone, email, password)  VALUES (1013681625, 'Gonzalo Diaz', 3134340058,'gonzalo@gmail.com', 123456);");
         db.execSQL("create table transactions(id integer primary key, account1 text, account2 text, hour text, date text,type text, amount bigint)");
-        db.execSQL("create table account(account text primary key, amount bigint, state text, id integer, foreign key(id) references user (id))");
-        db.execSQL("INSERT INTO account (account, amount, state,id)  VALUES ('1234-5678-9999-1111', 100000, 'Activada',1013681625);");
-        db.execSQL("INSERT INTO account (account, amount, state,id)  VALUES ('1234-5678-9999-2222', 100000, 'Activada',1032494428);");
-        db.execSQL("INSERT INTO account (account, amount, state,id)  VALUES ('1234-5678-9999-3333', 100000, 'Activada',1022419092);");
+        db.execSQL("create table account(account text primary key, amount bigint, state text, userId integer, foreign key(userId) references user (id))");
+        db.execSQL("INSERT INTO account (account, amount, state,userId)  VALUES ('1234-5678-9999-1111', 100000, 'Activada',1013681625);");
+        db.execSQL("INSERT INTO account (account, amount, state,userId)  VALUES ('1234-5678-9999-2222', 100000, 'Activada',1032494428);");
+        db.execSQL("INSERT INTO account (account, amount, state,userId)  VALUES ('1234-5678-9999-3333', 100000, 'Activada',1022419092);");
 
     }
 

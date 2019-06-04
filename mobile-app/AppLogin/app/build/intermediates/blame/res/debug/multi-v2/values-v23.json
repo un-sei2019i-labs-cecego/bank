@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\cesar\\Documents\\GitHub\\bank\\mobile-app\\AppLogin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "E:\\Universidad\\Materias\\Ingenieria_de_Software\\AppBanco\\bank\\mobile-app\\AppLogin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\cesar\\.gradle\\caches\\transforms-2\\files-2.1\\25b63889358380992bf7ae6fc0b3cba5\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Gonzalo Diaz\\.gradle\\caches\\transforms-2\\files-2.1\\aaa025a474d2f0169c2235ade349ac9f\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "2646",
+                        "endLines": "39",
+                        "endColumns": "12",
+                        "endOffsets": "2791"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Gonzalo Diaz\\.gradle\\caches\\transforms-2\\files-2.1\\f611c8a7036750260be481fd0d3d6333\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

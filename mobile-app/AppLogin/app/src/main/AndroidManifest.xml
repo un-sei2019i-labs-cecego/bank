@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BusinessLogic.MyAccountActivity"></activity>
-        <activity android:name=".BusinessLogic.MainActivity">
+        <activity android:name=".Presentation.MyAccountActivity"></activity>
+        <activity android:name=".Presentation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

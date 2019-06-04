@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\cesar\\Documents\\GitHub\\bank\\mobile-app\\AppLogin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
+            "outputFile": "E:\\Universidad\\Materias\\Ingenieria_de_Software\\AppBanco\\bank\\mobile-app\\AppLogin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\cesar\\.gradle\\caches\\transforms-2\\files-2.1\\25b63889358380992bf7ae6fc0b3cba5\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\Gonzalo Diaz\\.gradle\\caches\\transforms-2\\files-2.1\\f611c8a7036750260be481fd0d3d6333\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

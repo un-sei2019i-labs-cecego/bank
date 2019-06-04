@@ -28,6 +28,10 @@ public class TransactionRepository {
         String hour="12:00:00";
         //Retirar dinero
         Cursor fila = database.rawQuery("select * from account where account = '" + account1+"'", null);
+        Cursor fila2 = database.rawQuery("select * from account where account = '" + account2+"'", null);
+        if (fila2.getCount()<1){
+            return false;
+        }
         long amountOfMoney1;
         while (fila.moveToNext()) {
             amountOfMoney1 = fila.getLong(fila.getColumnIndex("amount"));
@@ -37,10 +41,10 @@ public class TransactionRepository {
             database.execSQL("update account set amount = " + (amountOfMoney1 - amount) + " where account = '" + account1+"'");
         }
         //Ingresar dinero
-        fila = database.rawQuery("select * from account where account = '" + account2+"'", null);
         long amountOfMoney2;
+
         while (fila.moveToNext()) {
-            amountOfMoney2 = fila.getLong(fila.getColumnIndex("amount"));
+            amountOfMoney2 = fila2.getLong(fila2.getColumnIndex("amount"));
             database.execSQL("update account set amount = " + (amountOfMoney2 + amount) + " where account = '" + account2+"'");
         }
         return  true;

@@ -5,39 +5,44 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.applogin.DataAccess.Database.DataBase;
+import com.example.applogin.DataAccess.Models.Account;
 
 public class AccountRepository {
 
     private SQLiteDatabase database;
-    Context ctx;
+    Context context;
+    Account account;
 
-    public AccountRepository(Context ctx) {
-        database = new DataBase(ctx).getWritableDatabase();
-        this.ctx = ctx;
+    public AccountRepository(Context context) {
+        database = new DataBase(context).getWritableDatabase();
+        this.context = context;
 
     }
 
-    public Object[] getAccountById(String accountId) {
-        database = new DataBase(ctx).getWritableDatabase();
+    public Account getAccountById(String accountId) {
+        database = new DataBase(context).getWritableDatabase();
         Cursor fila = database.rawQuery("select * from account where account = '" + accountId + "'", null);
-        Object account[] = new Object[4];
+        account = new Account(context, accountId);
+        if (fila.getCount() < 1) {
+            return null;
+        }
         while (fila.moveToNext()) {
-            account[0] = fila.getLong(fila.getColumnIndex("account"));
-            account[1] = fila.getString(fila.getColumnIndex("amount"));
-            account[2] = fila.getLong(fila.getColumnIndex("state"));
-            account[3] = fila.getString(fila.getColumnIndex("id"));
+            account.setAccountNum(fila.getString(fila.getColumnIndex("account")));
+            account.setBalance(fila.getLong(fila.getColumnIndex("balance")));
+            account.setState(fila.getString(fila.getColumnIndex("state")));
+            account.setUserId(fila.getLong(fila.getColumnIndex("userId")));
         }
         return account;
     }
 
     public void update(String column, String value, String accountId) {
-        database = new DataBase(ctx).getWritableDatabase();
+        database = new DataBase(context).getWritableDatabase();
         String hour = "12:00:00";
         database.execSQL("update account set " + column + " = " + value + " where account = '" + accountId + "'");
     }
 
     public void update(String column, long value, String accountId) {
-        database = new DataBase(ctx).getWritableDatabase();
+        database = new DataBase(context).getWritableDatabase();
         String hour = "12:00:00";
         database.execSQL("update account set " + column + " = " + value + " where account = '" + accountId + "'");
     }

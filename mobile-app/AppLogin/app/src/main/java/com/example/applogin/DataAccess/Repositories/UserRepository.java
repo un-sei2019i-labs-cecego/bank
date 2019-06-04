@@ -3,6 +3,7 @@ package com.example.applogin.DataAccess.Repositories;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.applogin.DataAccess.Database.DataBase;
+import com.example.applogin.DataAccess.Models.User;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -11,9 +12,10 @@ import android.database.Cursor;
 public class UserRepository {
 
     private SQLiteDatabase database;
-
+    Context context;
     public UserRepository(Context ctx) {
         //ctx.deleteDatabase("DB");
+        context = ctx;
         database = new DataBase(ctx).getWritableDatabase();
     }
 
@@ -22,16 +24,16 @@ public class UserRepository {
                 "VALUES (" + id + ", " + name + ", " + phone + ", " + email + ", " + accountNumber + ", " + password + ");");
     }
 
-    public Object[] getUserById(long id) {
-        Object user[] = new Object[6];
+    public User getUserById(long id) {
+        User user = new User(context);
         Cursor fila = database.rawQuery("select * from user where id = " + id, null);
         while (fila.moveToNext()) {
-            user[0] = fila.getLong(fila.getColumnIndex("id"));
-            user[1] = fila.getString(fila.getColumnIndex("name"));
-            user[2] = fila.getLong(fila.getColumnIndex("phone"));
-            user[3] = fila.getString(fila.getColumnIndex("email"));
-            user[4] = fila.getString(fila.getColumnIndex("accountNumber"));
-            user[5] = fila.getLong(fila.getColumnIndex("password"));
+            user.setId(fila.getLong(fila.getColumnIndex("id"));
+            user.setName(fila.getString(fila.getColumnIndex("name"));
+            user.setPhone(fila.getLong(fila.getColumnIndex("phone"));
+            user.setEmail(fila.getString(fila.getColumnIndex("email"));
+            user.setAccountNumber(fila.getString(fila.getColumnIndex("accountNumber"));
+            user.setPassword(fila.getLong(fila.getColumnIndex("password"));
         }
         return user;
     }

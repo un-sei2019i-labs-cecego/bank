@@ -13,54 +13,67 @@ public class User extends Person{
 
 
 
-    private long password;
-    private Account account;
-
+    private long id;
+    private String name;
+    private long phone;
+    private String email;
+    private String accountNumber;
+    private int password;
     private Context context;
 
     private UserRepository userRepository;
     private TransactionRepository transactionRepository;
-    public User(Context context, long id) {
+    public User(Context context) {
         super(context);
-        //Borrar luego de Pruebas---------------------------------------------
-        transactionRepository = new TransactionRepository(context);
-        //----------------------------------------------
-        userRepository = new UserRepository(context);
-        Object[] results  = userRepository.getUserById(id);
-
-        this.id = (long) results[0];
-        this.name = (String) results[1];
-        this.phone = (long) results[2];
-        this.email = (String) results[3];
-        this.account = new Account(context, (String) results[4]);
-        this.password = (long) results[5];
-
     }
 
-    public long getPassowrd(){
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(long phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public int getPassword() {
         return password;
     }
 
-    public String getAccountNum(){
-        return account.getAccountNum();
+    public void setPassword(int password) {
+        this.password = password;
     }
-
-    public long getBalance(){
-        return account.getBalance();
-    }
-
-    public String[][] getTransactionHistory(){
-        return null;
-    }
-
-    public boolean transferBalance(String account, long money){
-
-        return transactionRepository.transfer(this.account.getAccountNum(),account,money);
-
-    }
-
-    public boolean changePassword(){
-        return false;
-    }
-
 }

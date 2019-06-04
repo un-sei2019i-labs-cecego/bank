@@ -68,7 +68,7 @@ public class TransactionRepository {
 
         }
     }
-    public void getTransactionById(String id) {
+    public Object[] getTransactionById(int id) {
         database = new DataBase(ctx).getWritableDatabase();
         Cursor fila = database.rawQuery("select * from transactions where id = " +id, null);
         Object transaction[] = new Object[4];
@@ -82,6 +82,7 @@ public class TransactionRepository {
             transaction[6] = fila.getString(fila.getColumnIndex("amount"));
 
         }
+        return transaction;
     }
     public void update(String column, String value, String transactionId) {
         database = new DataBase(ctx).getWritableDatabase();

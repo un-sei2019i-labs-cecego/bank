@@ -10,28 +10,45 @@ public class Account {
     private String accountNum;
     private long balance;
     private String state;
-
+    private long userId;
     private Context context;
+
 
     private AccountRepository accountRepository;
 
-    public Account(Context context, String account){
+    public Account(Context context, String account) {
         this.context = context;
-
-        accountRepository = new AccountRepository(context);
-        Object[] results  = accountRepository.getAccountById(account);
-        this.accountNum = (String) results[0];
-        this.balance = (long) results[1];
-        this.state = (String) results[2];
-
     }
 
-    public long getBalance(){
-        return balance;
-    }
-
-    public String getAccountNum(){
+    public String getAccountNum() {
         return accountNum;
     }
 
+    public void setAccountNum(String accountNum) {
+        this.accountNum = accountNum;
+    }
+
+    public long getBalance() {
+        return balance;
+    }
+
+    public void setBalance(long balance) {
+        this.balance = balance;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
 }

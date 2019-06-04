@@ -11,7 +11,9 @@ import android.widget.Toast;
 import java.text.NumberFormat;
 import java.text.DecimalFormat;
 
+import com.example.applogin.BusinessLogic.SendMoneyController;
 import com.example.applogin.DataAccess.Models.User;
+import com.example.applogin.DataAccess.Repositories.UserRepository;
 import com.example.applogin.R;
 
 public class MyAccountActivity extends AppCompatActivity {
@@ -24,7 +26,7 @@ public class MyAccountActivity extends AppCompatActivity {
     EditText editText1;
     EditText editText2;
     EditText editText3;
-
+    SendMoneyController moneyController;
     User user;
 
 
@@ -32,7 +34,7 @@ public class MyAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
-
+        moneyController = new SendMoneyController();
         // Llamar elementos graficos
         button = (Button) findViewById(R.id.button);
         textView1 = (TextView) findViewById(R.id.textView1);
@@ -44,8 +46,8 @@ public class MyAccountActivity extends AppCompatActivity {
         editText3 = (EditText) findViewById(R.id.editText3);
 
         // Llamar datos del usuario
-        user = new User(getApplicationContext(), getIntent().getLongExtra("id", 0));
-
+        //user = new User(getApplicationContext(), getIntent().getLongExtra("id", 0));
+        user =new  UserRepository(getApplicationContext()).getUserById(getIntent().getLongExtra("id", 0));
         NumberFormat formatter = new DecimalFormat("#,###");
         double myNumber = 1000000;
         String formattedNumber = formatter.format(user.getBalance());
@@ -101,7 +103,7 @@ public class MyAccountActivity extends AppCompatActivity {
             NumberFormat formatter = new DecimalFormat("#,###");
             String formattedNumber = formatter.format(user.getBalance());
 
-            if (password == user.getPassowrd() && user.transferBalance(account,money)){
+            if (password == user.getPassowrd() && moneyController(account,money)){
 
                 textView4.setText("$" + formattedNumber + "");
                 Toast.makeText(getApplicationContext(), "Transacción realizada", Toast.LENGTH_SHORT).show();

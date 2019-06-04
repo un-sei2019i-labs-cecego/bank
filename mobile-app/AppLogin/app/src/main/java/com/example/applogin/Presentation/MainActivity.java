@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.applogin.DataAccess.Models.Person;
+import com.example.applogin.BusinessLogic.Login;
 
 import com.example.applogin.R;
 
@@ -18,14 +18,14 @@ public class MainActivity extends AppCompatActivity {
     EditText editText2;
     Button button;
 
-    Person person;
+    //Person person;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        person = new Person(getApplicationContext());
+        //person = new Person(getApplicationContext());
 
         editText1 = (EditText) findViewById(R.id.editText2);
         editText2 = (EditText) findViewById(R.id.editText3);
@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             long id = Long.parseLong(editText1.getText().toString());
-            long password = Long.parseLong(editText2.getText().toString());
+            int password = Integer.parseInt(editText2.getText().toString());
 
-            if (person.login(id, password)) {
+            if (new Login(getApplicationContext()).login(id, password)) {
                 Intent intent = new Intent(MainActivity.this, MyAccountActivity.class);
                 intent.putExtra("id", id);
                 startActivity(intent);

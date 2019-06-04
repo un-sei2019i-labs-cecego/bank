@@ -22,11 +22,13 @@ public class AccountRepository {
     public Account getAccountById(String accountId) {
         database = new DataBase(context).getWritableDatabase();
         Cursor fila = database.rawQuery("select * from account where account = '" + accountId + "'", null);
-        account = new Account(context, accountId);
+        account = new Account(context);
         if (fila.getCount() < 1) {
             return null;
         }
         while (fila.moveToNext()) {
+            System.out.println("acc -----------------------------");
+
             account.setAccountNum(fila.getString(fila.getColumnIndex("account")));
             account.setBalance(fila.getLong(fila.getColumnIndex("balance")));
             account.setState(fila.getString(fila.getColumnIndex("state")));

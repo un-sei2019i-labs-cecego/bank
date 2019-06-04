@@ -9,8 +9,7 @@ import com.example.applogin.DataAccess.Database.DataBase;
 import com.example.applogin.DataAccess.Repositories.TransactionRepository;
 import com.example.applogin.DataAccess.Repositories.UserRepository;
 
-public class User extends Person{
-
+public class User {
 
 
     private long id;
@@ -23,11 +22,12 @@ public class User extends Person{
 
     private UserRepository userRepository;
     private TransactionRepository transactionRepository;
+
     public User(Context context) {
-        super(context);
+        this.context = context;
     }
 
-    @Override
+
     public long getId() {
         return id;
     }
@@ -36,7 +36,6 @@ public class User extends Person{
         this.id = id;
     }
 
-    @Override
     public String getName() {
         return name;
     }

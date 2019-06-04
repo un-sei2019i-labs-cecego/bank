@@ -13,6 +13,7 @@ import java.text.DecimalFormat;
 
 import com.example.applogin.BusinessLogic.SendMoneyController;
 import com.example.applogin.DataAccess.Models.User;
+import com.example.applogin.DataAccess.Repositories.AccountRepository;
 import com.example.applogin.DataAccess.Repositories.UserRepository;
 import com.example.applogin.R;
 
@@ -28,13 +29,14 @@ public class MyAccountActivity extends AppCompatActivity {
     EditText editText3;
     SendMoneyController moneyController;
     User user;
-
+    AccountRepository accountRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
-        moneyController = new SendMoneyController();
+        moneyController = new SendMoneyController(getApplicationContext());
+        accountRepository = new AccountRepository(getApplicationContext());
         // Llamar elementos graficos
         button = (Button) findViewById(R.id.button);
         textView1 = (TextView) findViewById(R.id.textView1);
@@ -50,12 +52,12 @@ public class MyAccountActivity extends AppCompatActivity {
         user =new  UserRepository(getApplicationContext()).getUserById(getIntent().getLongExtra("id", 0));
         NumberFormat formatter = new DecimalFormat("#,###");
         double myNumber = 1000000;
-        String formattedNumber = formatter.format(user.getBalance());
+        String formattedNumber = formatter.format(accountRepository.getAccountById(user.getAccountNumber()).getBalance());
 
         // Asignar datos del usuario
         textView1.setText(user.getName());
         textView2.setText("C.C. " + user.getId() + "");
-        textView3.setText("Cuenta No. " + user.getAccountNum());
+        textView3.setText("Cuenta No. " + user.getAccountNumber());
         textView4.setText("$" + formattedNumber + "");
 
         // Llamar TabHost
@@ -101,9 +103,10 @@ public class MyAccountActivity extends AppCompatActivity {
             long money = Long.parseLong(editText2.getText().toString());
             long password = Long.parseLong(editText3.getText().toString());
             NumberFormat formatter = new DecimalFormat("#,###");
-            String formattedNumber = formatter.format(user.getBalance());
+            String formattedNumber = formatter.format(accountRepository.getAccountById(user.getAccountNumber()).getBalance());
 
-            if (password == user.getPassowrd() && moneyController(account,money)){
+            if (password == user.getPassword() &&
+                    moneyController.sendMoney(user.getAccountNumber(),editText1.getText().toString(),Integer.parseInt(editText2.getText().toString()))){
 
                 textView4.setText("$" + formattedNumber + "");
                 Toast.makeText(getApplicationContext(), "Transacción realizada", Toast.LENGTH_SHORT).show();
@@ -113,16 +116,16 @@ public class MyAccountActivity extends AppCompatActivity {
                 editText3.setText("");
 
                 // Llamar datos del usuario
-                user = new User(getApplicationContext(), getIntent().getLongExtra("id", 0));
+                user =new  UserRepository(getApplicationContext()).getUserById(getIntent().getLongExtra("id", 0));
 
                 formatter = new DecimalFormat("#,###");
                 double myNumber = 1000000;
-                formattedNumber = formatter.format(user.getBalance());
+                formattedNumber = formatter.format(accountRepository.getAccountById(user.getAccountNumber()).getBalance());
 
                 // Asignar datos del usuario
                 textView1.setText(user.getName());
                 textView2.setText("C.C. " + user.getId() + "");
-                textView3.setText("Cuenta No. " + user.getAccountNum());
+                textView3.setText("Cuenta No. " + user.getAccountNumber());
                 textView4.setText("$" + formattedNumber + "");
 
             }  else {

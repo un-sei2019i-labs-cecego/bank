@@ -1,6 +1,7 @@
 package com.example.applogin.DataAccess.Repositories;
 
 import com.example.applogin.DataAccess.Database.DataBase;
+import com.example.applogin.DataAccess.Models.Transaction;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -17,73 +18,47 @@ public class TransactionRepository {
     }
 
 
-    public boolean transfer(String account1, String account2, long amount) {
+    public void createTransaction(String account1, String account2, String type, long amount) {
         database = new DataBase(ctx).getWritableDatabase();
         String hour = "12:00:00";
-        //Retirar dinero
-        Cursor fila = database.rawQuery("select * from account where account = '" + account1 + "'", null);
-        Cursor fila2 = database.rawQuery("select * from account where account = '" + account2 + "'", null);
-        if (fila2.getCount() < 1) {
-            return false;
-        }
-        long amountOfMoney1;
-        while (fila.moveToNext()) {
-            amountOfMoney1 = fila.getLong(fila.getColumnIndex("amount"));
-            if (amountOfMoney1 - amount < 0) {
-                return false;
-            }
-            database.execSQL("update account set amount = " + (amountOfMoney1 - amount) + " where account = '" + account1 + "'");
-        }
-        //Ingresar dinero
-        long amountOfMoney2;
-
-        while (fila.moveToNext()) {
-            amountOfMoney2 = fila2.getLong(fila2.getColumnIndex("amount"));
-            database.execSQL("update account set amount = " + (amountOfMoney2 + amount) + " where account = '" + account2 + "'");
-        }
-        return true;
-
+        String date = "2019-06-01";
+        database.execSQL("INSERT INTO transactions (account1, account2, hour, date, type, balance)  " +
+                "VALUES ('" +account1 + "', '" + account2 + "','" + hour + "','" + date + "','" + type + "'," + amount + ");");
     }
 
-    public void createTransaction(int id, String account1, String account2, String hour,
-                       String date, String type, long amount) {
-        database = new DataBase(ctx).getWritableDatabase();
-
-        database.execSQL("INSERT INTO transactions (id, account1, account2, hour, date, type, amount)  " +
-                "VALUES (" + id + ", '" + account1 + "', '" + account2 + "','" + hour + "','" + date + "','" + type + "'," + amount + ");");
-    }
-
-    public void getTransactionByAccount(String accountId) {
+    public Transaction getTransactionByAccount(String accountId) {
         database = new DataBase(ctx).getWritableDatabase();
         Cursor fila = database.rawQuery("select * from transactions where account1 = '" + accountId + "'", null);
-        Object transaction[] = new Object[4];
+        Transaction transaction = new Transaction(ctx);
         while (fila.moveToNext()) {
-            transaction[0] = fila.getLong(fila.getColumnIndex("id"));
-            transaction[1] = fila.getString(fila.getColumnIndex("account1"));
-            transaction[2] = fila.getLong(fila.getColumnIndex("account2"));
-            transaction[3] = fila.getString(fila.getColumnIndex("hour"));
-            transaction[4] = fila.getString(fila.getColumnIndex("date"));
-            transaction[5] = fila.getString(fila.getColumnIndex("type"));
-            transaction[6] = fila.getString(fila.getColumnIndex("amount"));
-
+            transaction.setId(fila.getInt(fila.getColumnIndex("id")));
+            transaction.setAccount1(fila.getString(fila.getColumnIndex("account1")));
+            transaction.setAccount2(fila.getString(fila.getColumnIndex("account2")));
+            transaction.setTime(fila.getString(fila.getColumnIndex("hour")));
+            transaction.setDate(fila.getString(fila.getColumnIndex("date")));
+            transaction.setType(fila.getString(fila.getColumnIndex("type")));
+            transaction.setBalance(fila.getLong(fila.getColumnIndex("balance")));
         }
+        return transaction;
     }
-    public Object[] getTransactionById(int id) {
+
+    public Transaction getTransactionById(int id) {
         database = new DataBase(ctx).getWritableDatabase();
-        Cursor fila = database.rawQuery("select * from transactions where id = " +id, null);
-        Object transaction[] = new Object[4];
+        Cursor fila = database.rawQuery("select * from transactions where id = " + id, null);
+        Transaction transaction = new Transaction(ctx);
         while (fila.moveToNext()) {
-            transaction[0] = fila.getLong(fila.getColumnIndex("id"));
-            transaction[1] = fila.getString(fila.getColumnIndex("account1"));
-            transaction[2] = fila.getLong(fila.getColumnIndex("account2"));
-            transaction[3] = fila.getString(fila.getColumnIndex("hour"));
-            transaction[4] = fila.getString(fila.getColumnIndex("date"));
-            transaction[5] = fila.getString(fila.getColumnIndex("type"));
-            transaction[6] = fila.getString(fila.getColumnIndex("amount"));
+            transaction.setId(fila.getInt(fila.getColumnIndex("id")));
+            transaction.setAccount1(fila.getString(fila.getColumnIndex("account1")));
+            transaction.setAccount2(fila.getString(fila.getColumnIndex("account2")));
+            transaction.setTime(fila.getString(fila.getColumnIndex("hour")));
+            transaction.setDate(fila.getString(fila.getColumnIndex("date")));
+            transaction.setType(fila.getString(fila.getColumnIndex("type")));
+            transaction.setBalance(fila.getLong(fila.getColumnIndex("balance")));
 
         }
         return transaction;
     }
+
     public void update(String column, String value, String transactionId) {
         database = new DataBase(ctx).getWritableDatabase();
         String hour = "12:00:00";

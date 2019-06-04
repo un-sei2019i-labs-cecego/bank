@@ -23,13 +23,18 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="18f17c44-859c-47aa-836b-3611369ca735">
+        <schema name="main" object-types="dataset trigger, view, index, column, constraint, table" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="18f17c44-859c-47aa-836b-3611369ca735">
-      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[select * from account where account = '1234-5678-9999-2222'
-update account set amount = 100000 where account = '1234-5678-9999-2222']]></console>
-      <console name="Connection 1" type="STANDARD" schema="main" session="Main"><![CDATA[create table transactio(id integer primary key, account1 text, account2 text, hour text, date text,type text, amount bigint);]]></console>
+      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[create table transactions2(id integer primary key autoincrement, account1 text, account2 text, hour text, date text,type text, balance bigint)
+select * from transactions
+insert into transactions2(account1,account2,hour,date,type,balance) values ('321223','321231','131321','13113','dfsdf',1321321)]]></console>
+      <console name="Connection 1" type="STANDARD" schema="main" session="Main">create table transactio(id integer primary key, account1 text, account2 text, hour text, date text,type text, amount bigint);</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

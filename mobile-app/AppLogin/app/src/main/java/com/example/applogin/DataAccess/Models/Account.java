@@ -16,7 +16,7 @@ public class Account {
 
     private AccountRepository accountRepository;
 
-    public Account(Context context, String account) {
+    public Account(Context context) {
         this.context = context;
     }
 

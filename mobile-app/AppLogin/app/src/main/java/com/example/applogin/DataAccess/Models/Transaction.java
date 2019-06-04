@@ -14,19 +14,9 @@ public class Transaction {
     private String type;
     private long balance;
     private Context context;
-    private TransactionRepository transactionRepository;
 
-    public Transaction(Context context, int id) {
+    public Transaction(Context context) {
         this.context = context;
-        transactionRepository = new TransactionRepository(context);
-        Object[] results = transactionRepository.getTransactionById(id);
-        this.id = (int) results[0];
-        this.account1 = (String) results[1];
-        this.account2 = (String) results[2];
-        this.time = (String) results[3];
-        this.date = (String) results[4];
-        this.type = (String) results[5];
-        this.balance = (long) results[6];
     }
 
     public int getId() {

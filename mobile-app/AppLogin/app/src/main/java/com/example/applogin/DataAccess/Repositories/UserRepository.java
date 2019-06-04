@@ -27,13 +27,16 @@ public class UserRepository {
     public User getUserById(long id) {
         User user = new User(context);
         Cursor fila = database.rawQuery("select * from user where id = " + id, null);
+        if (fila.getCount() < 1) {
+            return null;
+        }
         while (fila.moveToNext()) {
-            user.setId(fila.getLong(fila.getColumnIndex("id"));
-            user.setName(fila.getString(fila.getColumnIndex("name"));
-            user.setPhone(fila.getLong(fila.getColumnIndex("phone"));
-            user.setEmail(fila.getString(fila.getColumnIndex("email"));
-            user.setAccountNumber(fila.getString(fila.getColumnIndex("accountNumber"));
-            user.setPassword(fila.getLong(fila.getColumnIndex("password"));
+            user.setId(fila.getLong(fila.getColumnIndex("id")));
+            user.setName(fila.getString(fila.getColumnIndex("name")));
+            user.setPhone(fila.getLong(fila.getColumnIndex("phone")));
+            user.setEmail(fila.getString(fila.getColumnIndex("email")));
+            user.setAccountNumber(fila.getString(fila.getColumnIndex("accountNumber")));
+            user.setPassword(fila.getInt(fila.getColumnIndex("password")));
         }
         return user;
     }

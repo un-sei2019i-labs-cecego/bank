@@ -18,8 +18,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.applogin.BusinessLogic.MyAccountActivity" />
-        <activity android:name="com.example.applogin.BusinessLogic.MainActivity" >
+        <activity android:name="com.example.applogin.Presentation.MyAccountActivity" />
+        <activity android:name="com.example.applogin.Presentation.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

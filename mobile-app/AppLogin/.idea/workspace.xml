@@ -36,20 +36,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/BusinessLogic/SendMoney.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/BusinessLogic/SendMoneyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="240">
+              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/TransactionRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1316">
-              <caret line="80" column="66" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
+            <state relative-caret-position="80">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="45" selection-end-column="5" />
+              <folding>
+                <element signature="e#402#403#0" expanded="true" />
+                <element signature="e#432#433#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/AccountRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -57,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Database/DataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="31" column="60" selection-start-line="30" selection-start-column="13" selection-end-line="31" selection-end-column="60" />
+            <state relative-caret-position="220">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -66,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="680">
               <caret line="49" column="40" selection-start-line="49" selection-end-line="50" />
             </state>
           </provider>
@@ -83,11 +99,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>account</find>
       <find>user</find>
+      <find>account</find>
     </findStrings>
     <replaceStrings>
       <replace>account</replace>
+      <replace>transaction</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -105,9 +122,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/applogin/BusinessLogic/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/applogin/Presentation/SendMoney.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/applogin/BusinessLogic/SendMoney.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Database/DataBase.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/AccountRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/TransactionRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/applogin/BusinessLogic/SendMoney.java" />
       </list>
     </option>
   </component>
@@ -306,7 +324,7 @@
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32917964" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.29646698" />
-      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Debug" order="8" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -356,13 +374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/BusinessLogic/SendMoney.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Models/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="499">
@@ -377,24 +388,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Database/DataBase.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="31" column="60" selection-start-line="30" selection-start-column="13" selection-end-line="31" selection-end-column="60" />
+        <state relative-caret-position="680">
+          <caret line="49" column="40" selection-start-line="49" selection-end-line="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/UserRepository.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Database/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="49" column="40" selection-start-line="49" selection-end-line="50" />
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/AccountRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/DataAccess/Repositories/TransactionRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1316">
-          <caret line="80" column="66" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
+        <state relative-caret-position="80">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/applogin/BusinessLogic/SendMoneyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

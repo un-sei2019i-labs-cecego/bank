@@ -76,14 +76,14 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Gonzalo Di
 		ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:11:9-40
-activity#com.example.applogin.BusinessLogic.MyAccountActivity
-ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:12:9-78
+activity#com.example.applogin.Presentation.MyAccountActivity
+ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:12:9-77
 	android:name
-		ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:12:19-66
-activity#com.example.applogin.BusinessLogic.MainActivity
+		ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:12:19-65
+activity#com.example.applogin.Presentation.MainActivity
 ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:13:19-61
+		ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:13:19-60
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from E:\Universidad\Materias\Ingenieria_de_Software\AppBanco\bank\mobile-app\AppLogin\app\src\main\AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN

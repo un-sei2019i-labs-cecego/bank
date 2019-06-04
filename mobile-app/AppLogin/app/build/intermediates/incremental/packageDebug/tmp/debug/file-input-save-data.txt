@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Jun 04 09:22:55 COT 2019
+#Tue Jun 04 10:22:48 COT 2019
 1.base=E\:\\Universidad\\Materias\\Ingenieria_de_Software\\AppBanco\\bank\\mobile-app\\AppLogin\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY

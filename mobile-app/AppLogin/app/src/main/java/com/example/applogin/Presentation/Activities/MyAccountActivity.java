@@ -1,4 +1,4 @@
-package com.example.applogin.Presentation;
+package com.example.applogin.Presentation.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 import java.text.NumberFormat;
 import java.text.DecimalFormat;
 
-import com.example.applogin.BusinessLogic.SendMoneyController;
+import com.example.applogin.BusinessLogic.Controllers.SendMoneyController;
 import com.example.applogin.DataAccess.Models.User;
 import com.example.applogin.DataAccess.Repositories.AccountRepository;
 import com.example.applogin.DataAccess.Repositories.UserRepository;

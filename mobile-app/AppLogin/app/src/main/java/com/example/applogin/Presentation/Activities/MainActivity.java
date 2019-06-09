@@ -1,4 +1,4 @@
-package com.example.applogin.Presentation;
+package com.example.applogin.Presentation.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.applogin.BusinessLogic.Login;
+import com.example.applogin.BusinessLogic.Controllers.LoginController;
 
 import com.example.applogin.R;
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             long id = Long.parseLong(editText1.getText().toString());
             int password = Integer.parseInt(editText2.getText().toString());
 
-            if (new Login(getApplicationContext()).login(id, password)) {
+            if (new LoginController(getApplicationContext()).login(id, password)) {
                 Intent intent = new Intent(MainActivity.this, MyAccountActivity.class);
                 intent.putExtra("id", id);
                 startActivity(intent);

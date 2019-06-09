@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Presentation.MyAccountActivity">
+    tools:context=".Presentation.Activities.MyAccountActivity">
 
     <!-- Contenedor principal de pestañas -->
     <TabHost

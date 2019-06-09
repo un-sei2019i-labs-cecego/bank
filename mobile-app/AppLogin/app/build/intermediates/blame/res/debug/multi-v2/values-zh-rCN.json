@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Universidad\\Materias\\Ingenieria_de_Software\\AppBanco\\bank\\mobile-app\\AppLogin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
+            "outputFile": "C:\\Users\\cesar\\Documents\\GitHub\\bank\\mobile-app\\AppLogin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Gonzalo Diaz\\.gradle\\caches\\transforms-2\\files-2.1\\f611c8a7036750260be481fd0d3d6333\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\cesar\\.gradle\\caches\\transforms-2\\files-2.1\\25b63889358380992bf7ae6fc0b3cba5\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Gonzalo Diaz\\.gradle\\caches\\transforms-2\\files-2.1\\74654a8844aa91ca62ffcaa896bb47f5\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\cesar\\.gradle\\caches\\transforms-2\\files-2.1\\9684d4ec33f4d3a0bed6cbad7fcf0c6f\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,14 +1,14 @@
-package com.example.applogin.BusinessLogic;
+package com.example.applogin.BusinessLogic.Controllers;
 
 import android.content.Context;
 
 import com.example.applogin.DataAccess.Repositories.UserRepository;
 
-public class Login {
+public class LoginController {
     private Context context;
     private UserRepository userRepository;
 
-    public Login(Context context) {
+    public LoginController(Context context) {
         this.context = context;
         userRepository = new UserRepository(context);
 

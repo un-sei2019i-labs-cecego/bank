@@ -88,19 +88,17 @@ public class MyAccountActivity extends AppCompatActivity {
         // Crear evento para hacer transacción
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                eventButton();
+                makeTransaction();
             }
         });
 
     }
 
     // realizar transacción
-    public void eventButton() {
+    public void makeTransaction() {
 
         try {
 
-            String account = editText1.getText().toString();
-            long money = Long.parseLong(editText2.getText().toString());
             long password = Long.parseLong(editText3.getText().toString());
             NumberFormat formatter = new DecimalFormat("#,###");
             String formattedNumber = formatter.format(accountRepository.getAccountById(user.getAccountNumber()).getBalance());
